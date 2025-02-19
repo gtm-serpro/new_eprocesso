@@ -1,0 +1,80 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BrDatePicker /> deveria adicionar label informado 1`] = `
+<div
+  class="br-datetimepicker"
+  data-mode="single"
+  data-type="text"
+>
+  <div
+    class="br-input has-icon"
+  >
+    <label
+      for="datetimepicker_____2"
+    >
+      Meu BrDatePicker
+    </label>
+    <input
+      autocomplete="off"
+      class="flatpickr-input"
+      data-input="data-input"
+      data-toggle="data-toggle"
+      id="datetimepicker_____2"
+      maxlength="10"
+      placeholder="DD/MM/AAAA"
+      type="text"
+    />
+    <button
+      aria-hidden="true"
+      aria-label="Abrir Calendário"
+      class="br-button circle small"
+      data-toggle="data-toggle"
+      id="timepicker-input-btn"
+      tab-index="-1"
+      type="button"
+    >
+      <i
+        aria-hidden="true"
+        class="fas fa-calendar-alt"
+      />
+    </button>
+  </div>
+</div>
+`;
+
+exports[`<BrDatePicker /> deveria renderizar o date picker 1`] = `
+<div
+  class="br-datetimepicker"
+  data-mode="single"
+  data-type="text"
+>
+  <div
+    class="br-input has-icon"
+  >
+    <input
+      autocomplete="off"
+      class="flatpickr-input"
+      data-input="data-input"
+      data-toggle="data-toggle"
+      id="datetimepicker_____1"
+      maxlength="10"
+      placeholder="DD/MM/AAAA"
+      type="text"
+    />
+    <button
+      aria-hidden="true"
+      aria-label="Abrir Calendário"
+      class="br-button circle small"
+      data-toggle="data-toggle"
+      id="timepicker-input-btn"
+      tab-index="-1"
+      type="button"
+    >
+      <i
+        aria-hidden="true"
+        class="fas fa-calendar-alt"
+      />
+    </button>
+  </div>
+</div>
+`;

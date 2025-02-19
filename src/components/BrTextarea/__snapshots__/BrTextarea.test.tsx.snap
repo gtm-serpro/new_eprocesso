@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BrTextarea /> deveria renderizar o TextArea 1`] = `
+<div
+  class="br-textarea"
+>
+  <textarea
+    id="textarea-1"
+  />
+</div>
+`;

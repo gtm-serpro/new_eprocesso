@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BrMagicButton /> deveria renderizar o Magic Button 1`] = `
+<div
+  class="br-magic-button medium"
+>
+  <button
+    class="br-button"
+    id="magicbutton_____1"
+    type="button"
+  >
+    Conteúdo
+  </button>
+</div>
+`;

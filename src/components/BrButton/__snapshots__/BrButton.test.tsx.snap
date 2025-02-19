@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BrButton /> deveria renderizar o button 1`] = `
+<button
+  class="br-button"
+  id="button_____1"
+  type="button"
+>
+  BrButton
+</button>
+`;

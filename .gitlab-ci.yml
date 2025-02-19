@@ -1,0 +1,120 @@
+image: node:20-alpine
+
+stages:
+  # Instala as dependências
+  - Dependências
+  # Gera um build do projeto para garantir que o arquivo final está sendo gerado
+  - Build
+  # Roda os testes e lints definidos pelo time
+  - Qualidade
+  # Build do storybook e publica no gitpages
+  - Storybook
+  # Executa o semantic-release conforme o .releaserc.yml
+  - Release
+
+cache:
+  paths:
+    - node_modules/
+
+Instalar dependências:
+  stage: Dependências
+  allow_failure: false
+  artifacts:
+    paths:
+      - node_modules
+    expire_in: 1 hour
+  script:
+    - apk --no-cache add git
+    - npm install
+
+React Components:
+  stage: Build
+  allow_failure: false
+  needs: ["Instalar dependências"]
+  artifacts:
+    paths:
+      - dist
+    expire_in: 1 day
+  script:
+    - npm run build:lib
+
+Jest:
+  stage: Qualidade
+  needs: ["Instalar dependências"]
+  allow_failure: false
+  artifacts:
+    when: always
+    paths:
+      - coverage/
+    reports:
+      junit:
+        - junit.xml
+      coverage_report:
+        coverage_format: cobertura
+        path: coverage/cobertura-coverage.xml
+    expire_in: 1 week
+    expose_as: "JEST Tests Report"
+  coverage: /All files[^|]*\|[^|]*\s+([\d\.]+)/
+  script:
+    - npm run coverage
+
+ESLint:
+  stage: Qualidade
+  needs: ["Instalar dependências"]
+  artifacts:
+    when: always
+    paths:
+      - report-eslint.html
+    expire_in: 1 week
+    expose_as: "ESLint Report"
+  script:
+    - npm run lint
+
+Commits:
+  stage: Qualidade
+  artifacts:
+    when: always
+    paths:
+      - report-commitlint.txt
+    expire_in: 1 week
+    expose_as: "Commitlint Report"
+  before_script:
+    - apk --no-cache add git
+    - npm i -g @govbr-ds/commit-config commitlint-gitlab-ci
+  script:
+    - commitlint-gitlab-ci -x @govbr-ds/commit-config > report-commitlint.txt
+
+pages:
+  stage: Storybook
+  needs: ["Instalar dependências"]
+  allow_failure: false
+  artifacts:
+    paths:
+      - public
+    expire_in: 1 day
+    expose_as: "Storybook Build"
+  script:
+    - npm run storybook:build
+    - rm -rf public
+    - mv storybook public
+    - find ./public -type f -exec sed -i 's#="/assets#="./assets#g' {} +
+    - find ./public -type f -exec sed -i 's#url(/assets#url(.#g' {} +
+    - find ./public -type f -exec sed -i 's#{return"/"+#{return"./"+#g' {} +
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "main"'
+
+Semantic Release:
+  stage: Release
+  environment:
+    name: production
+  needs: ["React Components"]
+  before_script:
+    - apk --no-cache add git zip
+  script:
+    - npx semantic-release
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "schedule"'
+      when: always
+      needs: ["React Components"]
+    - if: '$CI_COMMIT_BRANCH == "main" || $CI_COMMIT_BRANCH == "next" || $CI_COMMIT_REF_NAME =~ /\\d.(\\d|x).(\\d|x)(-alpha)?$/ || $CI_COMMIT_REF_NAME =~ /alpha$/'
+      when: manual

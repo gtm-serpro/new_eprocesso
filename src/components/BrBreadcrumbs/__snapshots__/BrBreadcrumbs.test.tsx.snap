@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BrBreadcrumbs/> deveria renderizar lista de crumbs informadas 1`] = `
+<div
+  class="br-breadcrumb"
+>
+  <ul
+    class="crumb-list"
+  >
+    <li
+      class="crumb"
+    >
+      <i
+        class="text-center icon fas fa-chevron-right"
+      />
+      <a>
+        <span>
+          crumb-1
+        </span>
+      </a>
+    </li>
+    <li
+      class="crumb"
+    >
+      <i
+        class="text-center icon fas fa-chevron-right"
+      />
+      <a>
+        <span>
+          crumb-2
+        </span>
+      </a>
+    </li>
+    <li
+      class="crumb"
+    >
+      <i
+        class="text-center icon fas fa-chevron-right"
+      />
+      <a>
+        <span>
+          crumb-3
+        </span>
+      </a>
+    </li>
+  </ul>
+</div>
+`;

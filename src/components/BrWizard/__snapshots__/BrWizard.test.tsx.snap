@@ -1,0 +1,253 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BrWizard /> deveria renderizar o wizard 1`] = `
+<div
+  style="height: 400px;"
+>
+  <div
+    class="br-wizard"
+    collapsed="collapsed"
+    step="1"
+  >
+    <div
+      class="wizard-progress"
+    >
+      <button
+        active="active"
+        class="wizard-progress-btn"
+        step="1"
+        title="Dados Pessoais"
+        type="button"
+      >
+        <span
+          class="info"
+        >
+          Dados Pessoais
+        </span>
+      </button>
+      <button
+        class="wizard-progress-btn"
+        step="2"
+        title="Validar Dados"
+        type="button"
+      >
+        <span
+          class="info"
+        >
+          Validar Dados
+        </span>
+      </button>
+      <button
+        class="wizard-progress-btn"
+        step="3"
+        title="Habilitar Cadastro"
+        type="button"
+      >
+        <span
+          class="info"
+        >
+          Habilitar Cadastro
+        </span>
+      </button>
+      <button
+        class="wizard-progress-btn"
+        step="4"
+        title="Cadastrar Senha"
+        type="button"
+      >
+        <span
+          class="info"
+        >
+          Cadastrar Senha
+        </span>
+      </button>
+      <button
+        class="wizard-progress-btn"
+        step="5"
+        title="Finalizar"
+        type="button"
+      >
+        <span
+          class="info"
+        >
+          Finalizar
+        </span>
+      </button>
+    </div>
+    <div
+      class="wizard-form"
+    >
+      <div
+        active="active"
+        class="wizard-panel"
+      >
+        <div
+          class="wizard-panel-content"
+        >
+          <div
+            class="h3"
+          >
+            Dados Pessoais
+          </div>
+          <div
+            class="text"
+            tabindex="0"
+          >
+            Conteúdo aqui - Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+          </div>
+        </div>
+        <div
+          class="wizard-panel-btn"
+        >
+          <button
+            class="br-button primary wizard-btn-next"
+            type="button"
+          >
+            Avançar
+          </button>
+        </div>
+      </div>
+      <div
+        class="wizard-panel"
+      >
+        <div
+          class="wizard-panel-content"
+        >
+          <div
+            class="h3"
+          >
+            Validar Dados
+          </div>
+          <div
+            class="text"
+            tabindex="0"
+          >
+            Conteúdo aqui - Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+          </div>
+        </div>
+        <div
+          class="wizard-panel-btn"
+        >
+          <button
+            class="br-button primary wizard-btn-next"
+            type="button"
+          >
+            Avançar
+          </button>
+          <button
+            class="br-button secondary wizard-btn-prev"
+            type="button"
+          >
+            Voltar
+          </button>
+        </div>
+      </div>
+      <div
+        class="wizard-panel"
+      >
+        <div
+          class="wizard-panel-content"
+        >
+          <div
+            class="h3"
+          >
+            Habilitar Cadastro
+          </div>
+          <div
+            class="text"
+            tabindex="0"
+          >
+            Conteúdo aqui - Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+          </div>
+        </div>
+        <div
+          class="wizard-panel-btn"
+        >
+          <button
+            class="br-button primary wizard-btn-next"
+            type="button"
+          >
+            Avançar
+          </button>
+          <button
+            class="br-button secondary wizard-btn-prev"
+            type="button"
+          >
+            Voltar
+          </button>
+        </div>
+      </div>
+      <div
+        class="wizard-panel"
+      >
+        <div
+          class="wizard-panel-content"
+        >
+          <div
+            class="h3"
+          >
+            Cadastrar Senha
+          </div>
+          <div
+            class="text"
+            tabindex="0"
+          >
+            Conteúdo aqui - Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+          </div>
+        </div>
+        <div
+          class="wizard-panel-btn"
+        >
+          <button
+            class="br-button primary wizard-btn-next"
+            type="button"
+          >
+            Avançar
+          </button>
+          <button
+            class="br-button secondary wizard-btn-prev"
+            type="button"
+          >
+            Voltar
+          </button>
+        </div>
+      </div>
+      <div
+        class="wizard-panel"
+      >
+        <div
+          class="wizard-panel-content"
+        >
+          <div
+            class="h3"
+          >
+            Finalizar
+          </div>
+          <div
+            class="text"
+            tabindex="0"
+          >
+            Conteúdo aqui - Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+          </div>
+        </div>
+        <div
+          class="wizard-panel-btn"
+        >
+          <button
+            class="br-button primary wizard-btn"
+            type="button"
+          >
+            Concluir
+          </button>
+          <button
+            class="br-button secondary wizard-btn-prev"
+            type="button"
+          >
+            Voltar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

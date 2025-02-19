@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BrAvatar /> deveria renderizar o avatar simples e com ícone 1`] = `
+<span
+  class="br-avatar alt do avatar"
+  title="alt do avatar"
+>
+  <span
+    class="image"
+  >
+    <i
+      aria-hidden="true"
+      class="fas fa-user"
+    />
+  </span>
+</span>
+`;

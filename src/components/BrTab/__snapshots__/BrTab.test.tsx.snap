@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BrTab /> deveria renderizar um component Tab com três abas com a primeira habilitada 1`] = `
+<div
+  class="br-tab"
+>
+  <nav
+    class="tab-nav"
+  >
+    <ul>
+      <li
+        class="tab-item is-active"
+      >
+        <button
+          aria-label="Panel 1"
+          type="button"
+        >
+          <span
+            class="name"
+          >
+            Panel 1
+          </span>
+        </button>
+      </li>
+      <li
+        class="tab-item"
+      >
+        <button
+          aria-label="Panel 2"
+          type="button"
+        >
+          <span
+            class="name"
+          >
+            Panel 2
+          </span>
+        </button>
+      </li>
+      <li
+        class="tab-item"
+      >
+        <button
+          aria-label="Panel 3"
+          type="button"
+        >
+          <span
+            class="name"
+          >
+            Panel 3
+          </span>
+        </button>
+      </li>
+    </ul>
+  </nav>
+  <div
+    class="tab-content"
+  >
+    <div
+      class="tab-panel is-active"
+    >
+      Detalhe Painel 1
+    </div>
+    <div
+      class="tab-panel"
+    >
+      Detalhe Painel 2
+    </div>
+    <div
+      class="tab-panel"
+    >
+      Detalhe Painel 3
+    </div>
+  </div>
+</div>
+`;

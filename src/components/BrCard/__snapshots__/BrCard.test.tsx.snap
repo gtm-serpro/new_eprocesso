@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BrCard deveria renderizar conteúdo do BrCard 1`] = `
+<div
+  class="br-card"
+>
+  <div
+    class="card-content"
+  >
+    Conteúdo
+  </div>
+</div>
+`;

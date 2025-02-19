@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BrItem /> deveria renderizar com a classe br-item 1`] = `
+<div
+  class="br-item"
+  role="listItem"
+>
+  <div
+    class="content"
+  >
+    <div
+      class="flex-fill"
+    >
+      Conteúdo
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BrList /> deveria renderizar com a classe br-list 1`] = `
+<div
+  class="br-list"
+  id="list_____1"
+  role="list"
+>
+  Conteúdo
+</div>
+`;
+
+exports[`<BrList /> deveria renderizar com a classe horizontal 1`] = `
+<div
+  class="br-list horizontal"
+  id="list_____3"
+  role="list"
+>
+  Conteúdo
+</div>
+`;

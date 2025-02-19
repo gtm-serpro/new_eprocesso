@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BrCheckbox /> deveria renderizar apenas um checkbox com o label informado 1`] = `
+<div
+  class="br-checkbox"
+>
+  <input
+    aria-label="meu checkbox"
+    id="checkbox-1"
+    type="checkbox"
+  />
+  <label
+    for="checkbox-1"
+  >
+    meu checkbox
+  </label>
+</div>
+`;

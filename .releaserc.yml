@@ -1,0 +1,65 @@
+---
+# Documentação: https://semantic-release.gitbook.io/semantic-release/v/beta/usage/configuration
+branches:
+  # Estável
+  - main
+  - "+([0-9])?(.{+([0-9]),x}).x"
+  # Próximas versões
+  - next
+  - next-major
+  # Prereleases
+  # Formatos aceitáveis: 1.1.1-prefixo, 1.1.x-prefixo, 1.x.x-prefixo, rc, beta, alpha
+  - name: "+([0-9])?(.{+([0-9]),x}).x-rc"
+    prerelease: rc
+  - name: "+([0-9])?(.{+([0-9]),x}).x-beta"
+    prerelease: beta
+  - name: "+([0-9])?(.{+([0-9]),x}).x-alpha"
+    prerelease: alpha
+  - name: "rc"
+    prerelease: rc
+  - name: "beta"
+    prerelease: beta
+  - name: "alpha"
+    prerelease: alpha
+plugins:
+  - - "@semantic-release/commit-analyzer"
+    - preset: conventionalcommits
+  - - "@semantic-release/release-notes-generator"
+    - preset: conventionalcommits
+      parserOpts:
+        noteKeywords:
+          - BREAKING CHANGE
+          - BREAKING CHANGES
+          - BREAKING
+      writerOpts:
+        commitsSort:
+          - subject
+          - scope
+  - - "@semantic-release/changelog"
+  - - "@semantic-release/exec"
+    - publishCmd: zip dist.zip dist/
+  - - "@semantic-release/gitlab"
+    - assets:
+        - path: dist.zip
+          label: JS Distribution
+        - path: README.md
+          label: README
+  - - semantic-release-discord
+    - onSuccessTemplate:
+        username: "$package_name"
+        content: Uma nova versão do nosso $package_name foi disponibilizada! Por favor consulte nosso site e/ou repositório para mais detalhes.
+        embeds:
+          - title: "$package_name $npm_package_version"
+            url: "$repo_url"
+            description: "$release_notes"
+            color: 4486596
+  - "@semantic-release/npm"
+  - - "@semantic-release/git"
+    - assets:
+        - package.json
+        - package-lock.json
+        - CHANGELOG.md
+      message: |-
+        chore(release): ${nextRelease.version} [skip ci]
+
+        ${nextRelease.notes}

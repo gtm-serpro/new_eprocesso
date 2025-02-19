@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BrSkipLink /> deveria renderizar o skip link 1`] = `
+<nav
+  class="br-skiplink"
+>
+  <a
+    accesskey="0"
+    class="br-item"
+    href="#main-component"
+  >
+    Ir para o conteúdo (1/4)
+    <span
+      class="br-tag text ml-1"
+    >
+      0
+    </span>
+  </a>
+  <a
+    accesskey="1"
+    class="br-item"
+    href="#main-component"
+  >
+    Ir para o conteúdo (2/4)
+    <span
+      class="br-tag text ml-1"
+    >
+      1
+    </span>
+  </a>
+  <a
+    accesskey="2"
+    class="br-item"
+    href="#main-component"
+  >
+    Ir para o conteúdo (3/4)
+    <span
+      class="br-tag text ml-1"
+    >
+      2
+    </span>
+  </a>
+  <a
+    accesskey="3"
+    class="br-item"
+    href="#main-component"
+  >
+    Ir para o conteúdo (4/4)
+    <span
+      class="br-tag text ml-1"
+    >
+      3
+    </span>
+  </a>
+  Conteúdo
+</nav>
+`;

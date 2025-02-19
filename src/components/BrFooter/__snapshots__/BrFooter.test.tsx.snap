@@ -1,0 +1,190 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BrFooter /> deveria renderizar o footer padrão 1`] = `
+<footer
+  class="br-footer"
+>
+  <div
+    class="container-lg"
+  >
+    <div
+      class="logo"
+    >
+      <img
+        alt="Logo"
+        src="/some-image"
+      />
+    </div>
+    <div
+      class="br-list horizontal"
+      id="list_____1"
+      role="list"
+    >
+      <div
+        class="col-md-2"
+      >
+        <a
+          class="br-item"
+          href="#"
+          role="listItem"
+        >
+          <div
+            class="content"
+          >
+            <div
+              class="flex-fill"
+            >
+              <div
+                class="content text-down-01 text-bold text-uppercase"
+              >
+                Categoria 1
+              </div>
+              <div
+                class="support"
+              >
+                <i
+                  aria-hidden="true"
+                  class="fas fa-angle-down"
+                />
+              </div>
+            </div>
+          </div>
+        </a>
+        <div
+          class="br-list"
+          id="list_____2"
+          role="list"
+        >
+          <div
+            class="br-divider d-md-none"
+          />
+          <a
+            class="br-item"
+            href="#"
+            role="listItem"
+          >
+            <div
+              class="content"
+            >
+              <div
+                class="flex-fill"
+              >
+                Ad deserunt nostrud
+              </div>
+            </div>
+          </a>
+          <a
+            class="br-item"
+            href="#"
+            role="listItem"
+          >
+            <div
+              class="content"
+            >
+              <div
+                class="flex-fill"
+              >
+                Nulla occaecat eiusmod
+              </div>
+            </div>
+          </a>
+          <a
+            class="br-item"
+            href="#"
+            role="listItem"
+          >
+            <div
+              class="content"
+            >
+              <div
+                class="flex-fill"
+              >
+                Nulla occaecat eiusmod
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div
+      class="d-none d-sm-block"
+    >
+      <div
+        class="row align-items-end justify-content-between pt-5 pb-5"
+      >
+        <div
+          class="social-network col"
+        >
+          <p
+            class="text-up-01 text-extra-bold text-uppercase"
+          >
+            Redes Sociais
+          </p>
+          <a
+            aria-label="Rede Social Facebook"
+            class="mr-3"
+            href="#"
+          >
+            <i
+              aria-hidden="true"
+              class="fa-2x fab fa-facebook-square"
+            />
+          </a>
+          <a
+            aria-label="Rede Social Twitter"
+            class="mr-3"
+            href="#"
+          >
+            <i
+              aria-hidden="true"
+              class="fa-2x fab fa-twitter-square"
+            />
+          </a>
+          <a
+            aria-label="Rede Social Linkedin"
+            class="mr-3"
+            href="#"
+          >
+            <i
+              aria-hidden="true"
+              class="fa-2x fab fa-linkedin"
+            />
+          </a>
+        </div>
+        <div
+          class="assigns text-right col"
+        >
+          <a
+            href="#"
+          >
+            <img
+              alt="Image 1"
+              class="ml-4"
+              src="/some-image"
+            />
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="br-divider my-3"
+  />
+  <div
+    class="container-lg"
+  >
+    <div
+      class="info"
+    >
+      <div
+        class="text-down-01 text-medium pb-3"
+      >
+        Texto destinado a exibição de informações relacionadas à 
+        <b>
+          licença de uso.
+        </b>
+      </div>
+    </div>
+  </div>
+</footer>
+`;

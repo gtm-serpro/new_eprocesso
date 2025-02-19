@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BrHeader /> deveria renderizar com a classe br-header 1`] = `
+<header
+  class="br-header"
+  id="header_____1"
+>
+  <div
+    class="container"
+  >
+    <div
+      class="header-top"
+    >
+      <div
+        class="header-actions"
+      >
+        <div
+          class="header-login"
+        >
+          <div
+            class="header-sign-in"
+          >
+            <button
+              class="br-button small"
+              data-trigger="login"
+              id="button_____2"
+              type="button"
+            >
+              <i
+                aria-hidden="true"
+                class="fas fa-user"
+              />
+              <span
+                class="d-sm-inline"
+              >
+                Entrar
+              </span>
+            </button>
+          </div>
+          <div
+            class="d-none"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="header-bottom"
+    >
+      <div
+        class="header-menu"
+      >
+        <div
+          class="header-info"
+        >
+          <div
+            class="header-title"
+          >
+            Título
+          </div>
+          <div
+            class="header-subtitle"
+          >
+            Subtítulo
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+`;

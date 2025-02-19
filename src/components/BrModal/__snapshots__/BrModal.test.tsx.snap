@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BrModal /> deveria renderizar modal com conteúdo passado 1`] = `
+<div
+  class="br-scrim foco active"
+>
+  <div
+    class="br-modal p-0 auto"
+  >
+    <div
+      class="br-card py-2"
+      style="flex-direction: column;"
+    >
+      <div
+        class="br-modal-header"
+      />
+      <div
+        class="mb-2 px-2"
+        style="overflow-y: auto; max-height: calc(100vh - 200px);"
+      >
+        <div
+          class="br-input"
+        >
+          <div
+            class="input-label"
+          >
+            <label
+              for="input_____1"
+            >
+              Conteúdo do Modal
+            </label>
+          </div>
+          <div
+            class="input-content"
+          >
+            <div
+              class="input-group"
+            >
+              <input
+                class=""
+                id="input_____1"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

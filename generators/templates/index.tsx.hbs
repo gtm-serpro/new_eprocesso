@@ -1,0 +1,17 @@
+export type {{pascalCase name}}Props = {
+  children: React.ReactNode;
+  className?: string;
+};
+
+const {{pascalCase name}} = (props: {{pascalCase name}}Props) => {
+  const { className, children } = props;
+
+  return (
+    <div className={className}>
+      <h1>{{pascalCase name}}</h1>
+      <div>{children}</div>
+    </div>
+  );
+};
+
+export default {{pascalCase name}};
