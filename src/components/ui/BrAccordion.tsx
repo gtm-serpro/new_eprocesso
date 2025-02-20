@@ -2,7 +2,6 @@
 import { useState, useImperativeHandle, forwardRef } from 'react';
 import BrTag from '../BrTag';
 import "@/styles/Accordion.css";
-import ParsedContent from './ParsedContent';
 
 export interface BrAccordionHandle {
     expandAll: () => void;
@@ -12,7 +11,7 @@ export interface BrAccordionHandle {
 interface AccordionItem {
     id: string;
     title: string;
-    content: string;
+    content: React.ReactNode;
 }
 
 interface BrAccordionProps {
@@ -83,17 +82,20 @@ const BrAccordion = forwardRef<BrAccordionHandle, BrAccordionProps>(
                                         aria-hidden="true"
                                     ></i>
                                 </span>
-                                <span className="d-flex flex-column flex-md-row title">
-                                    <BrTag
+                                <span className="d-flex flex-column flex-md-row title gap-4">
+                                    {/* <BrTag
                                         className="text-blue-vivid-50 text-bold mr-4 align-self-start"
                                         color="primary-pastel-02"
                                         value={prefix}
-                                    />
-                                    {remainingTitle}
+                                    /> */}
+
+                                    <span className='prefix'>{prefix}</span>
+                                    <span className='remainingTitle'>{remainingTitle}</span>
+
                                 </span>
                             </button>
                             <div className="content px-2 pt-0 pb-6" id={item.id}>
-                                <ParsedContent content={item.content} />
+                                {item.content}
                             </div>
                         </div>
                     );

@@ -9,76 +9,33 @@ import { useSpreadProps } from "../../hooks/useSpreadProps";
 import useUniqueId from "../../hooks/useUniqueId";
 import IMtProps from "../../types/IMtProps";
 import BrList, { ListRef } from "../BrList";
+import "@/styles/BrButton.css"
 
 export interface BrButtonProps extends React.HTMLAttributes<HTMLButtonElement>, IMtProps {
-  /**
-   * Conteúdo do botão (texto, imagem, etc).
-   */
   children?: ReactNode;
-  /**
-   * Se o botão é do tipo "Primário".
-   */
   primary?: boolean;
-  /**
-   * Se o botão é do tipo "Secundário".
-   */
   secondary?: boolean;
-  /**
-   * Se o botão é circular.
-   */
   circle?: boolean;
-  /**
-   *  Se o botão é do tipo "Fechar".
-   */
   close?: boolean;
-  /**
-   *  Se o botão tem cor invertida.
-   */
   inverted?: boolean;
-  /**
-   *  Se o botão ocupa uma linha inteira.
-   */
   block?: boolean;
-  /**
-   *  Definição responsiva se o botão ocupa uma linha inteira.
-   */
   clearBlock?: ClearBlock;
-  /**
-   *  Tamanho do botão.
-   */
   size?: "small" | "large";
-  /**
-   *  Se o botão tem a propriedade "loading".
-   */
   loading?: boolean;
-  /**
-   *  Se o botão está desabilitado.
-   */
   disabled?: boolean;
-  /**
-   *  Classe de ícone FontAwesome para o botão.
-   */
   icon?: string;
-  /**
-   *  Tipo do botão.
-   */
   type?: "button" | "submit" | "reset";
-  /**
-   *  Se o botão é do tipo Sign-In, especificamente para o botão de logar
-   */
   signIn?: boolean;
-  /**
-   *  Se é um botão do tipo "br-item"
-   */
   isItem?: boolean;
-  /**
-   *  Função disparada ao clicar no botão.
-   */
   onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
-  /**
-   *  Itens de dropdown, caso seja um botão com dropdown
-   */
   dropdownItems?: React.ReactNode;
+  /**
+   * Base color for the button. For example, passing "green" will result in:
+   * - Icon color: var(--green-50)
+   * - Hover bg: var(--green-10)
+   * - Active bg: var(--green-30)
+   */
+  color?: string;
 }
 
 const BrButton = React.forwardRef<HTMLButtonElement, BrButtonProps>(
@@ -99,6 +56,7 @@ const BrButton = React.forwardRef<HTMLButtonElement, BrButtonProps>(
       loading,
       disabled,
       icon,
+      color,
       signIn = false,
       isItem = false,
       onClick,
@@ -121,18 +79,31 @@ const BrButton = React.forwardRef<HTMLButtonElement, BrButtonProps>(
         onClick?.(event);
         setExpanded(!expanded);
       },
-      [onClick]
+      [onClick, expanded]
     );
 
     useOutsideClick([refButton, refList], () => {
       setTimeout(() => setExpanded(false), 100);
     });
 
+    // Update: build CSS variable references using var()
+    const colorStyles = color
+      ? {
+        "--btn-icon-color": `var(--${color}-50)`,
+        "--btn-hover-bg": `var(--${color}-10)`,
+        "--btn-active-bg": `var(--${color}-20)`,
+      }
+      : {};
+
+    // Merge any existing styles from spreadProps with our dynamic colorStyles
+    const buttonStyle = { ...spreadProps.style, ...colorStyles };
+
     return (
-      <CustomTag tagName={dropdownItems && "div"} className={expanded && "dropdown"}>
+      <CustomTag tagName={dropdownItems ? "div" : undefined} className={expanded ? "dropdown" : undefined}>
         <button
           type={type}
           id={fid}
+          style={buttonStyle}
           className={classNames(
             !signIn && !isItem && "br-button",
             isItem && "br-item",
@@ -160,7 +131,13 @@ const BrButton = React.forwardRef<HTMLButtonElement, BrButtonProps>(
           {...(dropdownItems && { "data-toggle": "dropdown" })}
           {...spreadProps}
         >
-          {icon && <Icon icon={icon} {...(!!children && { mr: 1 })} />}
+          {icon && (
+            <Icon
+              icon={icon}
+              color={color ? `var(--${color}-50)` : undefined}
+              {...(!!children && { mr: 1 })}
+            />
+          )}
           {children}
         </button>
         {dropdownItems && (

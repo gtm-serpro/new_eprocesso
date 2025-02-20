@@ -17,6 +17,10 @@ type IconProps = {
   icon: string;
   size?: IconSize;
   badge?: React.ReactNode;
+  /**
+   * Base color for the icon. Example: "red-vivid" makes the icon's color "red-vivid-50".
+   */
+  color?: string;
 } & IMtProps;
 
 const Badge = ({ badge, children }: BadgeProps) => {
@@ -34,22 +38,30 @@ const Badge = ({ badge, children }: BadgeProps) => {
   );
 };
 
-const Content = ({ icon, size, ...rest }: IconProps) => {
+const Content = ({ icon, size, color, ...rest }: IconProps) => {
   const mtProps = useMtProps(rest);
   const spreadProps = useSpreadProps(rest);
+
+  // Merge any provided style with our color style if color is provided.
+  const computedStyle = {
+    ...spreadProps.style,
+    ...(color ? { color: `${color}` } : {}),
+  };
+
   const svg = icon.endsWith(".svg");
   const classes = classNames(
     size && `fa-${size}`,
-    !svg && (icon.includes("fas ") || icon.includes("fab ") || icon.includes("fa "))
+    !svg &&
+      (icon.includes("fas ") || icon.includes("fab ") || icon.includes("fa "))
       ? icon
       : `fas fa-${icon}`,
     ...mtProps
   );
 
   return svg ? (
-    <img className={classes} src={icon} {...spreadProps} />
+    <img className={classes} src={icon} {...spreadProps} style={computedStyle} />
   ) : (
-    <i className={classes} aria-hidden="true" {...spreadProps} />
+    <i className={classes} aria-hidden="true" {...spreadProps} style={computedStyle} />
   );
 };
 

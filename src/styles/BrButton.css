@@ -1,0 +1,7 @@
+.br-button:hover {
+  background-color: var(--btn-hover-bg);
+}
+
+.br-button:active {
+  background-color: var(--btn-active-bg);
+}
