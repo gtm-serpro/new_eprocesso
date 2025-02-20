@@ -1,6 +1,6 @@
 import { useCallback, useState } from "react";
 import { useHref as href, useLocation, useNavigate } from "react-router-dom";
-import { BrDivider, BrMenu, BrRadioGroup, Col } from "..";
+import { BrDivider, BrMenu, BrRadioGroup, Col } from "../..";
 
 const Menu = () => {
   const imageSample = "https://www.gov.br/ds/assets/img/govbr-logo.png";

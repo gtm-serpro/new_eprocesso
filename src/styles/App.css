@@ -1,0 +1,7 @@
+body {
+    background-color: var(--gray-1);
+}
+
+.text-balance {
+    text-wrap: balance;
+}

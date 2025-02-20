@@ -1,0 +1,18 @@
+.br-accordion .item .content {
+    display: none;
+}
+
+.br-accordion .item.active .content {
+    display: block;
+}
+
+/* Optional: Add transition */
+.br-accordion .item .content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+.br-accordion .item.active .content {
+    max-height: 100%;
+}

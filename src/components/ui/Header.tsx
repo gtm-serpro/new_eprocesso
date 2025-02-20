@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useHref as href, useNavigate } from "react-router-dom";
-import { BrAvatar, BrDivider, BrHeader } from "..";
+import { BrAvatar, BrDivider, BrHeader } from "../..";
 
 type Props = { fluid?: boolean | "sm" | "md" | "lg" | "xl" };
 
